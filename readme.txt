@@ -5,7 +5,7 @@ Tags: get,image,posts,thumbnail,preview, plugin, post, posts,images,links
 Donate link:  http://regentware.com/donate/
 Requires at least: 2.0.0
 Tested up to: 3.2
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 
 Allows users to fetch an image from a post within the Loop.
 
@@ -26,7 +26,7 @@ Updates to the plugin will be posted here, to [thisismyurl.com](http://thisismyu
 
 = How do I display the results? =
 
-Insert the following code into your WordPress theme files: 
+Insert the following code into your WordPress theme files:
 
 = General results =
 Without passing any parameters, the plugin will return ten results or fewer depending on how many posts you have.
@@ -39,26 +39,26 @@ By default the plugin wraps your code in list item (&lt;li&gt;) tags but you can
 
  thisismyurl_get_image_from_post('before=&lt;p&gt;&amp;after=&lt;/p&gt;');
 
-= Adding a Link = 
+= Adding a Link =
 If you'd like to link to the post (remember it's not live yet) you can do so by calling:
 
- thisismyurl_get_image_from_post('link=true'); 
+ thisismyurl_get_image_from_post('link=true');
 
 
-= Which image? = 
+= Which image? =
 You can specify which image is returned using the code:
 
- thisismyurl_get_image_from_post('image=2'); 
+ thisismyurl_get_image_from_post('image=2');
 
 = Strip Attributes =
 If you would like to strip the attributes such as width and height from the returned value:
 
- thisismyurl_get_image_from_post('strip=true'); 
+ thisismyurl_get_image_from_post('strip=true');
 
 = Echo vs. Return =
 Finally, if you'd like to copy the results into a variable you can return the results as follows:
 
- thisismyurl_get_image_from_post('show=false'); 
+ thisismyurl_get_image_from_post('show=false');
 
 == Donations ==
 If you would like to donate to help support future development of this tool, please visit [Regent Software](http://regentware.com/donate/?5963074)

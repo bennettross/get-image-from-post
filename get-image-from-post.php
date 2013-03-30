@@ -6,7 +6,7 @@ Description: Used to fetch images from your posts to display as part of the exce
 Author: Christopher Ross
 Tags: future, upcoming posts, upcoming post, upcoming, draft, Post, scheduled, preview
 Author URI: http://thisismyurl.com
-Version: 2.0.0
+Version: 2.1.0
 */
 
 /*  Copyright 2011  Christopher Ross  (email : info@christopherross.ca)
