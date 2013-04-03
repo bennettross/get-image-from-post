@@ -3,8 +3,8 @@ Contributors: christopherross
 Plugin URI: http://thisismyurl.com/downloads/wordpress/plugins/get-image-from-post/
 Tags: get,image,posts,thumbnail,preview, plugin, post, posts,images,links
 Donate link:  http://regentware.com/donate/
-Requires at least: 2.0.0
-Tested up to: 3.2
+Requires at least: 3.0.0
+Tested up to: 3.5.1
 Stable tag: 2.1.0
 
 Allows users to fetch an image from a post within the Loop.
