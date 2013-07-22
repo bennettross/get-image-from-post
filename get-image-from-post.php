@@ -16,8 +16,8 @@ Version: 2.1.0
  *
  * @link		http://wordpress.org/extend/plugins/get-image-from-posts/
  *
- * @package 		Get Image from Post
- * @copyright		Copyright (c) 2008, Chrsitopher Ross
+ * @package 	Get Image from Post
+ * @copyright	Copyright (c) 2008, Chrsitopher Ross
  * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
  *
  * @since 		Get Image from Post 1.0
@@ -80,5 +80,3 @@ function thisismyurl_strip_tags_attributes( $string, $allowtags = NULL, $allowat
     }
     return $string;
 }
-
-?>
