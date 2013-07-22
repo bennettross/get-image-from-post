@@ -1,30 +1,27 @@
 <?php
 /*
 Plugin Name: Get Image from Post
-Plugin URI: http://thisismyurl.com/software/web-based/wordpress-plugins/get-image-from-posts/
+Plugin URI: http://thisismyurl.com/plugins/get-image-from-posts/
 Description: Used to fetch images from your posts to display as part of the excerpt.
-Author: Christopher Ross
 Tags: future, upcoming posts, upcoming post, upcoming, draft, Post, scheduled, preview
-Author URI: http://thisismyurl.com
+Author: Christopher Ross
+Author URI: http://thisismyurl.com/
 Version: 2.1.0
 */
 
-/*  Copyright 2011  Christopher Ross  (email : info@christopherross.ca)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+/**
+ * Get Image from Post core file
+ *
+ * This file contains all the logic required for the plugin
+ *
+ * @link		http://wordpress.org/extend/plugins/get-image-from-posts/
+ *
+ * @package 		Get Image from Post
+ * @copyright		Copyright (c) 2008, Chrsitopher Ross
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Get Image from Post 1.0
+ */
 
 function thisismyurl_get_image_from_post( $options = '' ) {
     global $post, $wpdb;
