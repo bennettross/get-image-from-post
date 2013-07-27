@@ -1,0 +1,3 @@
+[submodule "wordpress-plugins-common"]
+	path = wordpress-plugins-common
+	url = https://thisismyurl@github.com/thisismyurl/wordpress-plugins-common.git
