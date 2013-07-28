@@ -19,13 +19,13 @@ Version: 3.0.01-beta
  *
  * This file contains all the logic required for the plugin
  *
- * @link		http://wordpress.org/extend/plugins/stop-pinging-yourself-for-wordpress/
+ * @link	http://wordpress.org/extend/plugins/stop-pinging-yourself-for-wordpress/
  *
- * @package 	Get Image from Post
+ * @package	Get Image from Post
  * @copyright	Copyright (c) 2008, Chrsitopher Ross
- * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ * @license	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
  *
- * @since 		Get Image from Post 1.0
+ * @since	Get Image from Post 1.0
  */
 
 
@@ -165,13 +165,13 @@ class THISISMYURL_StopPingingYourselfforWordPress {
 	public function get_settings( $args = NULL ) {
 
 		$defaults = array(
-					'image' => 	1,
-					'show' => 	FALSE,
-					'link' => 	FALSE,
-					'width' => 	FALSE,
+					'image' =>	1,
+					'show' =>	FALSE,
+					'link' =>	FALSE,
+					'width' =>	FALSE,
 					'height' => FALSE,
-					'strip' => 	FALSE,
-					'ID' => 	NULL,
+					'strip' =>	FALSE,
+					'ID' =>	NULL,
 		);
 
 		return $defaults;
