@@ -34,21 +34,21 @@ Version: 3.0.01-beta
 $text_domain = strtolower( str_replace( '-', '_', basename( __FILE__ ) ) );
 
 $settings = array(	'plugin_name'		=> __( 'Get Image from Post', $text_domain ),
-					'plugin_menu_name'	=> __( 'Get Image', $text_domain ),
-					'plugin_dir'		=> plugin_dir_path( __FILE__ ),
-					'plugin_file'		=> basename( __FILE__ ),
-					'plugin_url'		=> plugin_dir_url( __FILE__ ),
-					'plugin_text_domain'=> $text_domain,
-					'plugin_settings'	=> FALSE
-			);
+			'plugin_menu_name'	=> __( 'Get Image', $text_domain ),
+			'plugin_dir'		=> plugin_dir_path( __FILE__ ),
+			'plugin_file'		=> basename( __FILE__ ),
+			'plugin_url'		=> plugin_dir_url( __FILE__ ),
+			'plugin_text_domain'	=> $text_domain,
+			'plugin_settings'	=> FALSE
+);
 
 require_once( $settings['plugin_dir'] . 'wordpress-plugins-common/thisismyurl-common-functions.php' );
 $gifp_common = new THISISMYURLCommonFunctions_v_0_1 ( $settings );
 
 
 
-if ( ! class_exists( 'THISISMYURL_StopPingingYourselfforWordPress' ) ) {
-class THISISMYURL_StopPingingYourselfforWordPress {
+if ( ! class_exists( 'THISISMYURL_GetImagefromPost' ) ) {
+class THISISMYURL_GetImagefromPost {
 
 	/**
 	* The public contructor class for the plugin
@@ -92,7 +92,7 @@ class THISISMYURL_StopPingingYourselfforWordPress {
 	* @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 	*
 	*/
-	public function get_image_from_post( $options = NULL ) {
+	public function get_image_from_post( $options = NULL ) { 
 
 		global $post;
 
@@ -103,8 +103,8 @@ class THISISMYURL_StopPingingYourselfforWordPress {
 
 		/** set legacy conversion **/
 		$legacy_option = array(
-							array( 'id', 'ID' ),
-						);
+					array( 'id', 'ID' ),
+		);
 
 
 		/** check legacy options **/
@@ -112,7 +112,8 @@ class THISISMYURL_StopPingingYourselfforWordPress {
 
 			if ( isset( $options[ $option_test[0] ] ) )
 				$options[ $option_test[1] ] = $options[ $option_test[0] ];
-		}
+				
+		} /* foreach */
 
 		if ( ! isset( $options['ID'] ) )
 			$options['ID'] = $post->ID;
@@ -123,31 +124,41 @@ class THISISMYURL_StopPingingYourselfforWordPress {
 
 		if ( isset( $post_details ) ) {
 
-			preg_match_all('/<img[^>]+>/i', $post_details->post_content , $images );
+			preg_match_all( '/<img[^>]+>/i', $post_details->post_content , $images );
 
 			if ( isset( $images ) )
 				$images_from_post = $images[0];
 
 			if ( isset( $images_from_post ) ) {
+				
 				$image_contents = new DOMDocument();
 				$image_contents->loadHTML( $images_from_post[ $options['image'] ]);
 				$image_attributes = $image_contents->getElementsByTagName('img');
 
 				foreach( $image_attributes as $image_attribute ) {
+					
 					$scr_attribute = $image_attribute->getAttribute('src');
-				}
+					
+				} /* foreach */
 
 				if ( isset( $scr_attribute ) ){
+					
 					if ( TRUE === $options[ 'show' ] )
 						echo $scr_attribute;
 					else
 						return $scr_attribute;
-				}
-			}
+					
+				} /* end if */
+				
+			} /* end if */
 
-		}
-	}
+		} /* end if */
+		
+	} /** get image from post() **/
 
+	
+	
+	
 	/**
 	* Sets the default values for the plugin
 	*
@@ -165,13 +176,13 @@ class THISISMYURL_StopPingingYourselfforWordPress {
 	public function get_settings( $args = NULL ) {
 
 		$defaults = array(
-					'image' =>	1,
-					'show' =>	FALSE,
-					'link' =>	FALSE,
-					'width' =>	FALSE,
-					'height' => FALSE,
-					'strip' =>	FALSE,
-					'ID' =>	NULL,
+				'image' =>	1,
+				'show' =>	FALSE,
+				'link' =>	FALSE,
+				'width' =>	FALSE,
+				'height' => 	FALSE,
+				'strip' =>	FALSE,
+				'ID' =>		NULL,
 		);
 
 		return $defaults;
@@ -179,9 +190,10 @@ class THISISMYURL_StopPingingYourselfforWordPress {
 	} /* get_settings() */
 
 
-}
-}
-$gifp_plugin = new THISISMYURL_StopPingingYourselfforWordPress ( $settings );
+} /* THISISMYURL_GetImagefromPost */
+} /* end if */
+
+$gifp_plugin = new THISISMYURL_GetImagefromPost ( $settings );
 
 
 
